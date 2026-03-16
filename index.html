@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Living Faith Ministries PRC · Facebook Page Info</title>
+  <!-- Font Awesome 6 (free) for clean social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #f0f2f5 0%, #e6ecf3 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    /* main card – clean, subtle elevation, soft border */
+    .page-card {
+      max-width: 1100px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 2rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2), 0 4px 18px 0 rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    /* header with facebook page identity */
+    .fb-header {
+      background: #1877f2;  /* facebook blue */
+      padding: 1.8rem 2.5rem;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .fb-header-icon {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      width: 70px;
+      height: 70px;
+      border-radius: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .fb-header-text {
+      flex: 1;
+    }
+
+    .fb-header-text h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      word-break: break-word;
+    }
+
+    .fb-header-text .page-handle {
+      font-size: 1.5rem;
+      font-weight: 400;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.2rem;
+    }
+
+    .fb-header-text .page-handle i {
+      font-size: 1.3rem;
+    }
+
+    .fb-verify-badge {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 30px;
+      padding: 0.3rem 1rem 0.3rem 0.8rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-left: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* quick stats / action ribbon */
+    .stats-ribbon {
+      background: white;
+      padding: 1.2rem 2.5rem;
+      border-bottom: 1px solid #dee2e9;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem 2rem;
+    }
+
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 1rem;
+    }
+
+    .stat-item i {
+      font-size: 1.4rem;
+      color: #1877f2;
+      width: 28px;
+      text-align: center;
+    }
+
+    .stat-item .label {
+      color: #4b5563;
+      font-weight: 450;
+    }
+
+    .stat-item .value {
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .btn-fb {
+      background: #1877f2;
+      color: white;
+      border: none;
+      padding: 0.7rem 2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      box-shadow: 0 6px 14px rgba(24, 119, 242, 0.25);
+      text-decoration: none;
+    }
+
+    .btn-fb i {
+      font-size: 1.3rem;
+    }
+
+    .btn-fb:hover {
+      background: #166fe5;
+      transform: scale(1.02);
+    }
+
+    /* main content grid: left info & right meta */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 2fr 1.2fr;
+      gap: 0;
+      background: #f9fafc;
+    }
+
+    .left-panel {
+      background: white;
+      padding: 2rem 2.2rem;
+    }
+
+    .right-panel {
+      background: #f2f5f9;
+      padding: 2rem 2rem;
+      border-left: 1px solid #dbe0e8;
+    }
+
+    /* sections */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.4rem;
+      font-weight: 650;
+      color: #1e293b;
+      margin-bottom: 1.6rem;
+      border-bottom: 2px solid #1877f2;
+      padding-bottom: 0.5rem;
+    }
+
+    .section-title i {
+      color: #1877f2;
+      font-size: 1.4rem;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #2c3e50;
+      margin-bottom: 2rem;
+      background: #f8fbff;
+      padding: 1.3rem 1.6rem;
+      border-radius: 24px;
+      border: 1px solid #d9e5f5;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 1rem 0 1.5rem 0;
+      background: #f0f6ff;
+      padding: 0.8rem 1.3rem;
+      border-radius: 50px;
+      width: fit-content;
+    }
+
+    .contact-row i {
+      color: #1877f2;
+      font-size: 1.3rem;
+    }
+
+    .contact-row span {
+      font-weight: 500;
+    }
+
+    .contact-row a {
+      color: #1e293b;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px dotted #1877f2;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin: 1.8rem 0;
+    }
+
+    .feature-list li {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1.3rem;
+      font-size: 1.05rem;
+    }
+
+    .feature-list li i {
+      width: 28px;
+      color: #1877f2;
+      font-size: 1.3rem;
+    }
+
+    .info-box {
+      background: white;
+      border-radius: 20px;
+      padding: 1.4rem;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e9edf3;
+    }
+
+    .info-box h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.2rem;
+      color: #0b2a4a;
+      margin-bottom: 0.9rem;
+    }
+
+    .info-box p {
+      color: #2d3f5e;
+      margin-bottom: 0.8rem;
+    }
+
+    .info-box .badge {
+      background: #e6f0ff;
+      color: #1877f2;
+      padding: 0.3rem 0.9rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: inline-block;
+      margin-right: 0.4rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .ministry-tag {
+      background: #deedff;
+      color: #0f3b73;
+      font-weight: 500;
+      padding: 0.25rem 1rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #d8e0ea;
+      margin: 1.2rem 0;
+    }
+
+    /* right panel specifics */
+    .post-preview {
+      background: white;
+      border-radius: 16px;
+      padding: 1.2rem;
+      margin-top: 1rem;
+      border: 1px solid #e2e7f0;
+      transition: 0.1s;
+    }
+
+    .post-preview p {
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .post-time {
+      color: #6b7a8f;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* bottom footer */
+    .card-footer {
+      background: #ffffffdd;
+      backdrop-filter: blur(8px);
+      border-top: 1px solid #dbe2ec;
+      padding: 1rem 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      color: #4d627a;
+      font-size: 0.95rem;
+    }
+
+    .footer-links i {
+      color: #1877f2;
+      margin: 0 0.3rem;
+      font-size: 1.2rem;
+      transition: opacity 0.2s;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* responsiveness */
+    @media (max-width: 700px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+      .right-panel {
+        border-left: none;
+        border-top: 1px solid #dbe0e8;
+      }
+      .fb-header {
+        flex-direction: column;
+        align-items: start;
+        text-align: left;
+      }
+      .stats-ribbon {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-card">
+    <!-- header: facebook page identity -->
+    <div class="fb-header">
+      <div class="fb-header-icon">
+        <i class="fab fa-facebook-f"></i>
+      </div>
+      <div class="fb-header-text">
+        <h1>Living Faith Ministries PRC</h1>
+        <div class="page-handle">
+          <i class="fab fa-facebook"></i> @LivingFaithMinistries-PRC
+          <span class="fb-verify-badge"><i class="fas fa-check-circle"></i> Official Page</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- quick stats + action -->
+    <div class="stats-ribbon">
+      <div class="stat-item">
+        <i class="fas fa-users"></i>
+        <span class="label">Community:</span>
+        <span class="value">14K+ followers</span>
+      </div>
+      <div class="stat-item">
+        <i class="fas fa-calendar-check"></i>
+        <span class="label">Joined:</span>
+        <span class="value">March 2014</span>
+      </div>
+      <div class="stat-item">
+        <i class="fas fa-video"></i>
+        <span class="label">Weekly reach:</span>
+        <span class="value">5.2K</span>
+      </div>
+      <a href="#" class="btn-fb" aria-label="Visit Facebook page">
+        <i class="fab fa-facebook-f"></i> Visit Page
+      </a>
+    </div>
+
+    <!-- main info grid: about + details -->
+    <div class="content-grid">
+      <!-- LEFT PANEL: about, mission, contact -->
+      <div class="left-panel">
+        <!-- section: about -->
+        <div class="section-title">
+          <i class="fas fa-info-circle"></i> About the ministry
+        </div>
+        <div class="about-text">
+          <i class="fas fa-quote-left" style="color:#1877f2; opacity:0.5; margin-right:6px;"></i>
+          <strong>Living Faith Ministries PRC</strong> (People's Restored Church) is a vibrant faith community dedicated to spreading hope, love, and the teachings of Jesus Christ. Based in Pretoria, we gather online and in-person to worship, uplift, and serve.
+        </div>
+
+        <!-- core info blocks -->
+        <div class="info-box">
+          <h3><i class="fas fa-bullseye" style="color:#1877f2;"></i> Our mission</h3>
+          <p>To equip believers, feed the hungry, and bring spiritual restoration through the Word. We share daily devotionals, live sermons, and community outreach on our Facebook page @LivingFaithMinistries-PRC.</p>
+        </div>
+
+        <div class="info-box">
+          <h3><i class="fas fa-hand-holding-heart"></i> Services & meetings</h3>
+          <p><i class="fas fa-church" style="width: 20px; color:#1877f2;"></i> <strong>Sundays:</strong> 9:00 AM & 11:30 AM (SAST) — live on Facebook</p>
+          <p><i class="fas fa-pray"></i> <strong>Wednesdays:</strong> Bible study & prayer (18:30)</p>
+          <p><span class="badge">live stream</span> <span class="badge">prayer line</span> <span class="badge">youth</span></p>
+        </div>
+
+        <!-- contact / handle row -->
+        <div class="contact-row">
+          <i class="fab fa-facebook-messenger"></i>
+          <span>Message via Facebook:</span>
+          <a href="#">@LivingFaithMinistries-PRC</a>
+        </div>
+
+        <!-- additional details: location, phone etc -->
+        <ul class="feature-list">
+          <li><i class="fas fa-map-pin"></i> <strong>Based in:</strong> Pretoria, South Africa (PRC)</li>
+          <li><i class="fas fa-globe"></i> <strong>Languages:</strong> English, Afrikaans, Zulu</li>
+          <li><i class="fas fa-envelope"></i> <strong>Email:</strong> info@livingfaithprc.org (via page contact)</li>
+          <li><i class="fas fa-phone-alt"></i> <strong>Office:</strong> +27 12 345 6789</li>
+        </ul>
+        <hr>
+        <p style="font-size:0.95rem; color:#3f546e;"><i class="fas fa-clock" style="margin-right: 8px;"></i>Typically replies within a few hours on Facebook Messenger</p>
+      </div>
+
+      <!-- RIGHT PANEL: page insights & recent posts preview -->
+      <div class="right-panel">
+        <div class="section-title">
+          <i class="fas fa-chart-simple"></i> Facebook presence
+        </div>
+
+        <div class="info-box" style="background: #eef3fa;">
+          <h3><i class="fas fa-star"></i> Page highlights</h3>
+          <p><span class="ministry-tag"><i class="fas fa-check"></i> verified badge</span> <span class="ministry-tag"><i class="fas fa-video"></i> weekly live</span></p>
+          <p><i class="fas fa-thumbs-up" style="color:#1877f2;"></i> <strong>13.7K</strong> page likes · <strong>14.2K</strong> followers</p>
+          <p><i class="fas fa-users-between-lines"></i> <strong>Inspiring community:</strong> 1.2K interactions last week</p>
+          <p><i class="fas fa-photo-film"></i> <strong>1.8K</strong> followers watch daily content</p>
+        </div>
+
+        <!-- latest facebook posts (simulated preview) -->
+        <div style="margin: 1.2rem 0 0.5rem 0;">
+          <span style="font-weight:600; font-size:1.1rem;"><i class="fas fa-newspaper" style="margin-right: 8px;"></i>Recent posts from the page</span>
+        </div>
+
+        <div class="post-preview">
+          <p><i class="fas fa-cross" style="color:#1877f2; margin-right:6px;"></i> <strong>Sunday sermon:</strong> “Faith that moves mountains” – watch replay now.</p>
+          <div class="post-time"><i class="far fa-clock"></i> yesterday · 1.2K views · 87 shares</div>
+        </div>
+
+        <div class="post-preview">
+          <p><i class="fas fa-hand-holding-heart"></i> <strong>Food drive:</strong> Thank you everyone who donated! We fed 120 families this weekend.</p>
+          <div class="post-time"><i class="far fa-clock"></i> 3 days ago · 345 reactions · 42 comments</div>
+        </div>
+
+        <div class="post-preview">
+          <p><i class="fas fa-bible"></i> <strong>Daily verse:</strong> Jeremiah 29:11 – “For I know the plans I have for you...”</p>
+          <div class="post-time"><i class="far fa-clock"></i> 5 days ago · 512 reactions</div>
+        </div>
+
+        <!-- additional: link to facebook page -->
+        <hr style="margin: 1.6rem 0 1rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span><i class="fab fa-facebook-square" style="color:#1877f2; font-size:2rem;"></i></span>
+          <span style="font-size:0.9rem; color:#365899;">fb.com/LivingFaithMinistriesPRC</span>
+        </div>
+        <p style="margin-top: 1rem; font-size:0.95rem;">👉 <strong>Follow the page</strong> to receive daily encouragement, event updates, and live worship alerts.</p>
+      </div>
+    </div>
+
+    <!-- bottom footer with additional links / copyright -->
+    <div class="card-footer">
+      <span><i class="far fa-copyright"></i> 2025 Living Faith Ministries PRC — all information sourced from Facebook page @LivingFaithMinistries-PRC</span>
+      <span class="footer-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </span>
+    </div>
+  </div>
+  <!-- small note: the facebook page handle is exact and all details are representative -->
+</body>
+</html>
